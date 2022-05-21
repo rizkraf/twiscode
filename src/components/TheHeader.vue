@@ -1,6 +1,7 @@
 <script setup>
 import { ref } from "vue";
 import { MenuIcon } from "@heroicons/vue/solid";
+import { XIcon } from "@heroicons/vue/solid";
 
 const navs = ref([
   { name: "Home", url: "/" },
@@ -25,14 +26,16 @@ const navOpen = () => {
       <div class="flex items-center justify-between">
         <!-- Logo -->
         <div>
-          <img src="../assets/images/logo-twiscode.png" alt="" />
+          <RouterLink to="/">
+            <img src="../assets/images/logo-twiscode.png" alt="logo-twiscode" />
+          </RouterLink>
         </div>
         <!-- Hamburger Menu -->
         <div>
-          <MenuIcon
-            @click="navOpen"
-            class="block h-8 w-8 cursor-pointer lg:hidden"
-          />
+          <button @click="navOpen" class="block lg:hidden">
+            <XIcon v-if="isNavOpen" class="h-8 w-8" />
+            <MenuIcon v-else class="h-8 w-8" />
+          </button>
         </div>
       </div>
       <!-- Navlink -->
