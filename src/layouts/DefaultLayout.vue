@@ -4,7 +4,7 @@ import TheFooter from "../components/TheFooter.vue";
 </script>
 
 <template>
-  <div>
+  <div class="bg-white">
     <TheHeader />
     <RouterView />
     <TheFooter />

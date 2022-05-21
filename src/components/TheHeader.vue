@@ -21,7 +21,7 @@ const navOpen = () => {
 </script>
 
 <template>
-  <header class="bg-white font-poppins shadow-sm">
+  <header class="font-poppins shadow-sm">
     <nav class="container py-3 lg:flex lg:items-center lg:justify-between">
       <div class="flex items-center justify-between">
         <!-- Logo -->
@@ -45,7 +45,7 @@ const navOpen = () => {
             v-for="(nav, index) in navs"
             :key="index"
             :to="nav.url"
-            class="my-4 block transition duration-300 ease-in-out hover:text-[#414141] lg:my-0"
+            class="my-4 block transition duration-300 ease-in-out hover:text-[#9F9F9F] lg:my-0"
             :class="index == 6 ? 'lg:ml-4' : 'lg:mx-4'"
             exact-active-class="underline decoration-black decoration-1 underline-offset-8"
           >
