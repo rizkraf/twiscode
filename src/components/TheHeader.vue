@@ -1,7 +1,6 @@
 <script setup>
 import { ref } from "vue";
-import { MenuIcon } from "@heroicons/vue/solid";
-import { XIcon } from "@heroicons/vue/solid";
+import { MenuIcon, XIcon } from "@heroicons/vue/solid";
 
 const navs = ref([
   { name: "Home", url: "/" },
