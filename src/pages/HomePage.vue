@@ -1,5 +1,6 @@
 <script setup>
 import { ref } from "vue";
+import { testimonial } from "../stores/testimonial.js";
 import mdi_android from "../assets/icons/mdi_android.svg";
 import mdi_web from "../assets/icons/mdi_web.svg";
 import mdi_view_quilt from "../assets/icons/mdi_view_quilt.svg";
@@ -40,7 +41,7 @@ const products = ref([
         <!-- Header Text Section -->
         <div class="order-2 lg:order-1 lg:basis-[30%]">
           <h1
-            class="mb-10 text-6xl font-semibold leading-[4.5rem] text-black-light lg:text-[4rem]"
+            class="mb-10 text-5xl font-semibold leading-[4.5rem] text-black-light lg:text-[4rem]"
           >
             We Code We Deliver
           </h1>
@@ -122,7 +123,7 @@ const products = ref([
       </div>
     </section>
 
-    <section class="container py-10 lg:py-32 lg:pr-0 lg:pl-20 xl:pl-52">
+    <section class="container py-10 lg:pb-0 lg:pt-24 lg:pr-0 lg:pl-20 xl:pl-52">
       <div class="relative flex">
         <div
           class="left-0 z-10 w-full bg-white p-8 drop-shadow-xl md:p-12 lg:absolute lg:w-[50%]"
@@ -144,6 +145,21 @@ const products = ref([
           src="../assets/images/section-2-image.png"
           alt=""
         />
+      </div>
+    </section>
+
+    <section
+      class="container flex flex-col items-center justify-center py-10 lg:px-20 lg:pt-10 lg:pb-32 xl:px-52"
+    >
+      <h2
+        class="mb-10 text-center text-4xl font-semibold text-black-light md:w-1/2"
+      >
+        Our Customers are our biggest fans
+      </h2>
+      <div class="flex flex-wrap items-center justify-center gap-4">
+        <div v-for="testi in testimonial.image" :key="testi">
+          <img :src="testi.name" alt="" />
+        </div>
       </div>
     </section>
   </main>
