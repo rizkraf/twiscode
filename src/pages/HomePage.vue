@@ -1,6 +1,7 @@
 <script setup>
 import { ref } from "vue";
 import { testimonial } from "../stores/testimonial.js";
+import { team } from "../stores/team.js";
 import mdi_android from "../assets/icons/mdi_android.svg";
 import mdi_web from "../assets/icons/mdi_web.svg";
 import mdi_view_quilt from "../assets/icons/mdi_view_quilt.svg";
@@ -50,7 +51,7 @@ const products = ref([
             <!-- Button -->
             <div class="mr-5">
               <button
-                class="h-8 w-8 rounded-full bg-[#9FD685] p-1 shadow-lg shadow-[#9FD685]/100"
+                class="h-10 w-10 rounded-full bg-[#9FD685] p-2 shadow-lg shadow-[#9FD685]/100"
               >
                 <img
                   class="h-full w-full text-white"
@@ -79,7 +80,7 @@ const products = ref([
       </div>
     </section>
 
-    <section class="container py-10 lg:px-20 lg:py-32 xl:px-52">
+    <section class="container py-10 lg:px-20 lg:pt-32 lg:pb-20 xl:px-52">
       <div class="flex flex-col items-center justify-between md:flex-row">
         <div>
           <div class="relative overflow-hidden rounded-xl drop-shadow-xl">
@@ -89,7 +90,7 @@ const products = ref([
             />
             <div class="absolute top-0 right-0 bg-white px-8 py-4">
               <a
-                class="text-black transition duration-300 ease-in-out hover:text-[#9F9F9F]"
+                class="hover:text-gray-ligth text-black transition duration-300 ease-in-out"
                 href="#"
                 >View Detail</a
               >
@@ -103,9 +104,10 @@ const products = ref([
             </h2>
             <div>
               <div
-                v-for="product in products"
-                :key="product"
-                class="mb-5 flex items-start"
+                v-for="(product, index) in products"
+                :key="index"
+                class="flex items-start"
+                :class="index !== 2 ? 'mb-5' : ''"
               >
                 <img :src="product.icon" alt="" class="mr-5 mt-[2px]" />
                 <div>
@@ -123,15 +125,15 @@ const products = ref([
       </div>
     </section>
 
-    <section class="container py-10 lg:pb-0 lg:pt-24 lg:pr-0 lg:pl-20 xl:pl-52">
+    <section class="container py-10 lg:py-20 lg:pr-0 lg:pl-20 xl:pl-52">
       <div class="relative flex">
         <div
-          class="left-0 z-10 w-full bg-white p-8 drop-shadow-xl md:p-12 lg:absolute lg:w-[50%]"
+          class="left-0 top-20 z-10 w-full bg-white p-8 drop-shadow-xl md:p-12 lg:absolute lg:w-[50%]"
         >
           <h2 class="mb-4 text-4xl font-semibold text-black-light">
             How We Work
           </h2>
-          <p class="mb-4 font-medium text-[#9F9F9F]">
+          <p class="mb-4 font-medium text-gray-light">
             Let's discuss what projects you have in mind
           </p>
           <button
@@ -141,7 +143,7 @@ const products = ref([
           </button>
         </div>
         <img
-          class="relative z-0 hidden lg:left-[24.5rem] lg:-top-20 lg:block"
+          class="relative z-0 hidden lg:left-[24.5rem] lg:block"
           src="../assets/images/section-2-image.png"
           alt=""
         />
@@ -149,16 +151,49 @@ const products = ref([
     </section>
 
     <section
-      class="container flex flex-col items-center justify-center py-10 lg:px-20 lg:pt-10 lg:pb-32 xl:px-52"
+      class="container flex flex-col items-center justify-center py-10 lg:px-20 lg:py-20 xl:px-52"
     >
       <h2
         class="mb-10 text-center text-4xl font-semibold text-black-light md:w-1/2"
       >
         Our Customers are our biggest fans
       </h2>
-      <div class="flex flex-wrap items-center justify-center gap-4">
+      <div class="mb-5 flex flex-wrap items-center justify-center gap-4">
         <div v-for="testi in testimonial.image" :key="testi">
           <img :src="testi.name" alt="" />
+        </div>
+      </div>
+      <button class="text-sm text-[#5E5B5B]">see More</button>
+    </section>
+
+    <section class="container py-10 lg:px-20 xl:px-52">
+      <h2
+        class="mb-10 text-center text-4xl font-semibold text-black-light md:mb-16"
+      >
+        Our Team
+      </h2>
+      <div class="flex flex-col items-center justify-around md:flex-row">
+        <div
+          class="mb-10 flex flex-col items-center md:mb-0"
+          :class="[
+            index == 0 ? 'order-3 mb-0 md:order-1' : '',
+            index == 1 ? 'order-1 md:order-2' : '',
+            index == 2 ? 'order-2 md:order-3' : '',
+          ]"
+          v-for="(tim, index) in team.detail"
+          :key="tim"
+        >
+          <img
+            :src="tim.image"
+            class="mb-5 h-52 w-52 md:h-auto md:w-auto"
+            alt=""
+          />
+          <h3 class="mb-2 text-2xl font-semibold text-black-light">
+            {{ tim.name }}
+          </h3>
+          <h3 class="text-2xl font-semibold text-gray-light">
+            {{ tim.role }}
+          </h3>
         </div>
       </div>
     </section>
