@@ -99,7 +99,9 @@ const products = ref([
         </div>
         <div class="mt-6 md:basis-[40%] lg:mt-0 lg:basis-[45%]">
           <div>
-            <h2 class="mb-7 text-4xl font-semibold text-black-light lg:ml-7">
+            <h2
+              class="mb-7 text-center text-4xl font-semibold text-black-light lg:ml-7 lg:text-left"
+            >
               What We Do?
             </h2>
             <div>
@@ -203,7 +205,9 @@ const products = ref([
         class="flex flex-col items-start justify-between md:flex-row md:items-end"
       >
         <div>
-          <h2 class="mb-4 text-4xl font-semibold text-black md:mb-6">
+          <h2
+            class="mb-6 text-center text-4xl font-semibold text-black-light md:text-left"
+          >
             Join Our Team
           </h2>
           <img
