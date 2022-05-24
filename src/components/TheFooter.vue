@@ -33,7 +33,7 @@ const contacts = ref([
 <template>
   <footer class="font-poppins">
     <div class="container flex flex-col justify-between py-8 md:flex-row">
-      <div class="mb-5 w-full sm:max-w-[360px] md:mb-0">
+      <div class="mb-8 w-full sm:max-w-[360px] md:mb-0">
         <h3 class="mb-5 text-2xl font-semibold">Location</h3>
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15831.040929418534!2d112.748146!3d-7.2681035!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x84a7521f5f8cc186!2sTwiscode%20Digital%20Agency!5e0!3m2!1sid!2sid!4v1653353647365!5m2!1sid!2sid"
@@ -45,7 +45,7 @@ const contacts = ref([
           referrerpolicy="no-referrer-when-downgrade"
         ></iframe>
       </div>
-      <div class="mb-5 basis-1/4 md:mb-0">
+      <div class="mb-8 basis-1/4 md:mb-0">
         <h3 class="mb-5 text-2xl font-semibold">Company</h3>
         <ul>
           <li
@@ -64,7 +64,7 @@ const contacts = ref([
         </ul>
       </div>
       <div>
-        <h3 class="mb-5 text-2xl font-semibold">Contact Us</h3>
+        <h3 class="mb-6 text-2xl font-semibold">Contact Us</h3>
         <div
           class="flex"
           :class="index !== 2 ? 'mb-5' : ''"
